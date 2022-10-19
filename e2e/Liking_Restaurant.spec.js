@@ -1,38 +1,37 @@
 const assert = require('assert');
 Feature('Liking Restaurant');
-
+ 
 Before(({ I }) => {
   I.amOnPage('/');
+  I.wait(3);
 });
-
-Scenario('showing empty liked restaurants', ({ I }) => {
+ 
+Scenario('showing empty liked restaurant', ({ I }) => {
   I.amOnPage('/#/like');
-  I.wait(5);
-  I.seeElement('.restaurant-item');
-  I.see('You dont have any favorite Restaurant', '.restaurant-item');
+  I.wait(3);
+  I.seeElement('.restaurants');
+  I.wait(3);
+  I.see('You dont have any favorite Restaurant', '.restaurants');
 });
 
 Scenario('liking one restaurant', async ({ I }) => {
   I.amOnPage('/#/home');
-  I.wait(2);
-
-  I.seeElement('.restaurant-item');
-  const firstCard = locate('h3').first();
-  const contentContainer = firstCard.find('.restaurant-item__content p');
-  const restaurantDescription = await I.grabTextFrom(contentContainer);
-
-  const cardLink = firstCard.find('a');
-  I.click(cardLink);
-  I.wait(2);
-
+  I.wait(3);
+  I.seeElement('h3 a');
+  I.wait(3);
+  const firstResto = locate('h3 a').first();
+  const firstRestoTitle = await I.grabTextFrom(firstResto);
+  I.click(firstResto);
+  I.wait(3);
   I.seeElement('#likeButton');
   I.click('#likeButton');
-  I.wait(2);
-
-  I.amOnPage('/#/favorite');
-  const restaurantLikedDescription = await I.grabTextFrom(contentContainer);
-
-  assert.strictEqual(restaurantDescription, restaurantLikedDescription);
+  I.wait(3);
+  I.amOnPage('/#/like');
+  I.wait(3);
+  I.seeElement('.restaurant-item');
+  I.wait(3);
+  const likedRestoTitle = await I.grabTextFrom('h3 a');
+  assert.strictEqual(firstRestoTitle, likedRestoTitle);
 });
 
 Scenario('unliking one restaurant', async ({ I }) => {
@@ -40,17 +39,17 @@ Scenario('unliking one restaurant', async ({ I }) => {
   I.wait(2);
 
   // like restaurant fisrt
-  const firstCard = locate('.restaurant-card').first();
+  const firstCard = locate('h3').first();
   const cardLink = firstCard.find('a');
   I.click(cardLink);
   I.wait(2);
   I.seeElement('#likeButton');
   I.click('#likeButton');
 
-  //unline restaurant
-  I.amOnPage('/#/favorite');
+  //unlike restaurant
+  I.amOnPage('/#/like');
   I.wait(2);
-  const firstLikedCard = locate('.restaurant-card').first();
+  const firstLikedCard = locate('h3').first();
   const cardLikedLink = firstLikedCard.find('a');
   I.click(cardLikedLink);
   I.wait(2);
@@ -58,10 +57,7 @@ Scenario('unliking one restaurant', async ({ I }) => {
   I.click('#likeButton');
 
   // check if favorite page is empty
-  I.amOnPage('/#/favorite');
+  I.amOnPage('/#/like');
   I.wait(2);
-  I.see('You dont have any favorite Restaurant', '#favorite-restaurant');
-
-
-
+  I.see('You dont have any favorite Restaurant', '.restaurants');
 });
