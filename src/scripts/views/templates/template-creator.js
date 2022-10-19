@@ -2,7 +2,7 @@ import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (resto) => `
 <h2 class="restaurant__title">${resto.name}</h2>
-  <img class="restaurant__poster" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}" />
+  <img class="lazyload restaurant__poster" data-src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}" />
   <div class="restaurant__info">
     <h3>Information</h3>
     <h4>Nama Restaurant</h4>
@@ -33,8 +33,8 @@ const createRestoDetailTemplate = (resto) => `
 const createRestoItemTemplate = (resto) => `
   <div class="restaurant-item">
     <div class="restaurant-item__header">
-      <img class="restaurant-item__header__poster" alt="${resto.name}"
-           src="${resto.pictureId ? CONFIG.BASE_IMAGE_URL + resto.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
+      <img class="lazyload restaurant-item__header__poster" alt="${resto.name}"
+      data-src="${resto.pictureId ? CONFIG.BASE_IMAGE_URL + resto.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
       <div class="restaurant-item__header__rating">
         <p>⭐️<span class="restaurant-item__header__rating__score">${resto.rating}</span></p>
       </div>
