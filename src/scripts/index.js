@@ -1,8 +1,8 @@
 import 'regenerator-runtime'; /* for async await transpile */
-import '../custom-element/header-bar';
-import '../custom-element/hero-element';
-import '../custom-element/main-section';
-import '../custom-element/footer-bar';
+// import '../custom-element/header-bar';
+// import '../custom-element/hero-element';
+// import '../custom-element/main-section';
+// import '../custom-element/footer-bar';
 import '../styles/main.css';
 import '../styles/responsive.css';
 import '../styles/custom.css';

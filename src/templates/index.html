@@ -12,9 +12,51 @@
   <title>D'Restaurant</title>
 </head>
 <body>
-  <header-bar></header-bar>
-  <hero-element></hero-element>
-  <main-section></main-section>
-  <footer-bar></footer-bar>
+  <a href="#mainContent" class="skip-link">Menuju ke konten</a>
+        <header class="header">
+            <div class="header__inner">
+                <h1 class="header__title">D'Restaurant</h1>
+                <button id="menu" class="header__menu">☰</button>
+            </div>
+            <nav id="drawer" class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#/home">Home</a></li>
+                <li class="nav__item"><a href="#/like">Liked Restaurant</a></li>
+                <li class="nav__item"><a href="https://arifrizqi.com" target="_blank">About Us</a></li>
+            </ul>
+            </nav>
+        </header>
+        <div class="hero">
+          <div class="hero__inner">
+          <h1 class="hero__title">D'Restaurant Solusi Perut Kenyang</h1>
+          <p class="hero__tagline">Biasakanlah untuk malas masak, karena itu adalah tugas kami, anda kenyang, kami senang!</p>
+          </div>
+      </div>
+      <main id="mainContent" tabindex="0">
+        <section class="content">
+        <article class="headline">
+            <figure class="headline__figure">
+            <img src="./images/heros/hero-image_1.jpg" width="450" alt="">
+            <figcaption>Masak Sapi bakar tapi kuah</figcaption>
+            </figure>
+
+            <div class="headline__content">
+            <h1 class="headline__title">D'Restaurant: Solusi Perut Kenyang</h1>
+            <p class="headline__description">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus incidunt aliquam nisi sint quidem expedita libero fugiat, amet atque ad dicta quos odio facilis temporibus, esse vitae quis dignissimos iste.
+                Accusamus porro ex quo itaque repellendus consequuntur quas officiis. Iusto reiciendis ipsa a nemo vel minus consectetur, adipisci tempora dolorem natus ex dignissimos, non quasi sapiente quam provident earum veniam.
+            </p>
+            <button class="headline__button">Order</button>
+            </div>
+        </article>
+
+        <div class="latest">
+            <h1 class="latest__label">Expolre Restaurant</h1>
+        </div>
+        </section>
+    </main>
+    <footer>
+      <p>Copyright &copy; 2022 <a href="">D'Restaurant</a></p>
+  </footer>
 </body>
 </html>
