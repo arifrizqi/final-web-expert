@@ -1,4 +1,5 @@
 /* eslint-disable no-underscore-dangle */
+// eslint-disable-next-line no-unused-vars
 import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
 import { createLikeRestoButtonTemplate, createUnlikeRestoButtonTemplate } from '../views/templates/template-creator';
 
