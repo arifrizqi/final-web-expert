@@ -10,6 +10,11 @@ class MainSection extends HTMLElement {
             <article class="headline">
                 <figure class="headline__figure">
                 <img src="./images/heros/hero-image_1.jpg" width="450" alt="">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="./images/heros/hero-image_1-small.jpg">
+                  <img src='./images/heros/hero-image_1-large.jpg' 
+                      alt="hero image">
+                </picture>
                 <figcaption>Masak Sapi bakar tapi kuah</figcaption>
                 </figure>
 

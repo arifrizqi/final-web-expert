@@ -1,11 +1,15 @@
+/* eslint-disable no-undef */
 const assert = require('assert');
+
+// eslint-disable-next-line no-undef
 Feature('Liking Restaurant');
- 
+
+// eslint-disable-next-line no-undef
 Before(({ I }) => {
   I.amOnPage('/');
   I.wait(3);
 });
- 
+
 Scenario('showing empty liked restaurant', ({ I }) => {
   I.amOnPage('/#/like');
   I.wait(3);
@@ -46,7 +50,7 @@ Scenario('unliking one restaurant', async ({ I }) => {
   I.seeElement('#likeButton');
   I.click('#likeButton');
 
-  //unlike restaurant
+  // unlike restaurant
   I.amOnPage('/#/like');
   I.wait(2);
   const firstLikedCard = locate('h3').first();
