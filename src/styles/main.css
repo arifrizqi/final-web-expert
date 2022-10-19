@@ -138,9 +138,11 @@ a {
   min-height: 380px;
   width: 100%;
   text-align: center;
-  background-image: url("../public/images/heros/hero.jpg");
+  background-image: url("../public/images/heros/hero-large.jpg");
   background-position: center;
   background-color: rgb(0, 128, 0);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .hero__inner {
