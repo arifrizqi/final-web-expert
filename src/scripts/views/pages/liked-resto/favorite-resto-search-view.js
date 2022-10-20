@@ -1,5 +1,7 @@
-import { createRestoItemTemplate }from '../../templates/template-creator';
- 
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable class-methods-use-this */
+import { createRestoItemTemplate } from '../../templates/template-creator';
+
 class FavoriteRestoSearchView {
   getTemplate() {
     return `
